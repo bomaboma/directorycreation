@@ -1,0 +1,15 @@
+---
+tasks:
+    - name: This play will create directory
+      file: path/home/{{item}}/credential state=directory owner={{item}}
+      
+    - name: This will copy user file into the above directory  
+      copy: src=/home/boma/test2 dest=/home/{{item}}/credential
+      with_items: "{{user}}"
+      
+    - name: This 
+      user:
+        - grace
+        - joy 
+        - belema
+        - dein
